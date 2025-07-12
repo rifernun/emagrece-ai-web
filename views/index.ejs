@@ -1,0 +1,62 @@
+<%- include('./partials/header.ejs') %>
+<%- include('./partials/navbar.ejs') %>
+
+<div class="container-main">
+    <div class="card">
+        <div class="card-title">
+            <h1>Emagrece <span class="AI">AÍ</span></h1>
+            <p>O seu site de emagrecimento!</p>
+        </div>
+        <p><hr></p>
+        <div class="card-body">
+            <p><h2>Selecione as opções para prosseguir:</h2></p>
+            <form action="/diet" method="post" onsubmit="return Loading(event)">
+                <select name="objetivo" id="objetivo" required>
+                    <option disabled selected>Seu Objetivo</option>
+                    <option value="Perda-De-Peso">Perda de peso</option>
+                    <option value="Ganho-De-Massa">Ganho de Massa</option>
+                    <option value="Manter-Peso">Manter o Peso</option>
+                </select>
+                
+                <input type="number" class="custom-input" name="peso" id="peso" placeholder="Peso Atual em kg sem decimais" required>
+
+                <select name="tipo" id="tipo" required>
+                    <option disabled selected>Tipo que se enquadra</option>
+                    <option value="Acima-do-Peso">Acima do peso</option>
+                    <option value="Magro">Magro</option>
+                    <option value="Atleta">Atleta</option>
+                </select>
+                
+                <button class="btn-submit" id="btn" type="submit" >Enviar</button>
+                
+            </form>
+            
+        </div>
+    </div>
+</div>
+<script>
+    function Loading(event) {
+    const objetivo = document.getElementById('objetivo');
+    const peso = document.getElementById('peso');
+    const tipo = document.getElementById('tipo');
+    const btn = document.getElementById('btn');
+
+    const objetivoValido = objetivo && objetivo.value !== '' && objetivo.value !== 'Seu Objetivo';
+    const pesoValido = peso && peso.value.trim() !== '';
+    const tipoValido = tipo && tipo.value !== '' && tipo.value !== 'Tipo que se enquadra';
+
+    if (objetivoValido && pesoValido && tipoValido) {
+        btn.innerHTML = '<span class="spinner"></span> Carregando...';
+        btn.disabled = true;
+        return true;
+    }
+
+
+    alert("Preencha todos os campos corretamente.");
+    event.preventDefault();
+    return false;
+    }
+
+</script>
+
+<%- include('./partials/footer.ejs') %>

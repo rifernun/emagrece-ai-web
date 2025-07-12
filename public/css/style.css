@@ -1,0 +1,453 @@
+:root {
+  /* Fundo e Layout */
+  --color-bg-main: #2C3E50;
+  --color-bg-secondary: #3D5A40;
+
+  /* Cores de Ação */
+  --color-primary: #6E8B74;
+  --color-secondary: #C18C7E;
+
+  /* Tipografia */
+  --color-text-main: #EAE3D2;
+  --color-text-muted: #A4B0B5;
+
+  /* Extras */
+  --color-border: #455A64;
+  --color-hover: #5E7C68;
+
+  /* Navbar */
+  --navbar-bg: #2C3E50;
+  --navbar-link: #A4B0B5;
+  --navbar-link-hover: #C18C7E;
+  --navbar-link-active: #6E8B74;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  overflow-y: auto; /* normal */
+  height: 100%;
+  max-height: 100vh;
+}
+* {
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+}
+
+body {
+  user-select: none;
+  background: var(--color-bg-main);
+  height: 100vh;
+}
+
+/* ==================== Navbar ==================== */
+.navbar {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  padding: 0 1.5rem;
+  z-index: 1000;
+}
+
+.navbar-title {
+  color: var(--navbar-link);
+  font-style: italic;
+  font-size: 1.2rem;
+  flex-grow: 1;
+}
+
+.navbar-title .AI-navbar {
+  color: var(--navbar-link-active);
+}
+.AI{
+  color: var(--navbar-link-active);
+}
+
+a{
+  color: var(--navbar-link);
+  font-style: italic;
+  font-size: 1.2rem;
+  flex-grow: 1;
+}
+
+/* ==================== Container ==================== */
+
+.container-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* centraliza horizontal */
+  justify-content: center; /* centraliza vertical */
+  
+  min-height: 70vh; /* ou use min-height para flexibilidade */
+  padding: 0 1rem;
+  
+  /* Para permitir scroll interno se o conteúdo for grande */
+  overflow-y: auto; 
+  box-sizing: border-box;
+}
+.container-main{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 90vh;
+  color: var(--color-text-main);
+  padding: 0 1rem;
+  color: var(--color-text-muted);
+}
+
+.container-center p {
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+.container-main p {
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+/* ==================== Card ==================== */
+
+.card{
+  padding: 2rem;
+  background-color: var(--color-text-main);
+  border-radius: 20px;
+  width: 350px;
+}
+.card hr{
+  width: 100%;
+}
+
+
+.card-title{
+  color: var(--navbar-bg);
+}
+.card-title p{
+  color: var(--navbar-link);
+}
+
+.card-body h2{
+  color: var(--navbar-bg);
+  font-size: 1.2rem;
+}
+
+
+.card-diet {
+  padding: 2rem;
+  background-color: var(--color-text-main);
+  border-radius: 20px;
+  max-width: 680px;
+  width: 100%;
+  box-sizing: border-box;
+  overflow-wrap: break-word;
+}
+.card-diet hr{
+  width: 100%;
+}
+
+.card-body-diet{
+  margin-top: 50px;
+}
+.card-body-diet p{
+  margin-top: 10px;
+  color: #020202;
+}
+
+
+.card-title{
+  color: var(--navbar-bg);
+}
+.card-title p{
+  color: var(--navbar-link);
+}
+
+.card-body h2{
+  color: var(--navbar-bg);
+  font-size: 1.2rem;
+}
+
+
+/* ==================== Inputs ==================== */
+select {
+  width: 100%;
+  padding: 0.4rem;
+  border-radius: 10px;
+  border: 1px solid var(--color-text-muted);
+  background-color: white;
+  color: var(--color-text-muted);
+  font-size: 1rem;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  margin-top: 10px;
+
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg fill='%236e8b74' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.8rem center;
+  background-size: 1rem;
+
+  cursor: pointer;
+  transition:
+    border 0.3s ease,
+    border-radius 0.3s ease,
+    box-shadow 0.3s ease,
+    background-color 0.3s ease,
+    color 0.3s ease;
+}
+
+select:hover {
+  background-color: #f0f4f1; /* tom claro levemente esverdeado */
+  color: var(--color-primary); /* muda a cor do texto ao passar o mouse */
+  border: 1px solid var(--color-primary);
+  box-shadow: 0 0 6px rgba(110, 139, 116, 0.3); /* leve brilho no hover */
+}
+
+select:focus {
+  outline: none;
+  border: 2px solid var(--color-primary);
+  border-radius: 5px;
+  box-shadow:
+    0 0 5px rgba(110, 139, 116, 0.6),
+    0 0 10px rgba(110, 139, 116, 0.4);
+  background-color: #f9f9f9;
+  color: var(--color-primary);
+}
+
+input.custom-input {
+  width: 100%;
+  padding: 0.4rem;
+  margin-top: 10px;
+  border-radius: 10px;
+  border: 1px solid var(--color-text-muted);
+  background-color: white;
+  color: var(--color-text-muted);
+  font-size: 1rem;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  cursor: text;
+  transition:
+    border 0.3s ease,
+    border-radius 0.3s ease,
+    box-shadow 0.3s ease,
+    background-color 0.3s ease,
+    color 0.3s ease;
+}
+
+input.custom-input:hover {
+  background-color: #f0f4f1; /* tom claro levemente esverdeado */
+  color: var(--color-primary);
+  border: 1px solid var(--color-primary);
+  box-shadow: 0 0 6px rgba(110, 139, 116, 0.3);
+}
+
+input.custom-input:focus {
+  outline: none;
+  border: 2px solid var(--color-primary);
+  border-radius: 5px;
+  box-shadow:
+    0 0 5px rgba(110, 139, 116, 0.6),
+    0 0 10px rgba(110, 139, 116, 0.4);
+  background-color: #f9f9f9;
+  color: var(--color-primary);
+}
+input.custom-input::placeholder {
+  color: var(--color-text-muted); /* ou qualquer cor que você queira */
+  opacity: 1; /* para garantir que a cor fique forte */
+}
+
+
+.diet-table {
+  width: 100%;
+  background-color: var(--color-text-main);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 0 8px rgba(0,0,0,0.15);
+  font-size: 0.95rem;
+  color: var(--navbar-bg);
+  height: 100vh; /* Pode ser ajustado com responsividade */
+  border: #2C3E50;
+}
+
+.diet-table thead {
+  background-color: var(--color-primary);
+  color: white;
+  text-align: left;
+}
+
+.diet-table thead th {
+  padding: 0.8rem 1rem;
+}
+
+.diet-table tbody td {
+  padding: 0.6rem 1rem;
+  vertical-align: top;
+  word-wrap: break-word;
+}
+
+/* Destaque só para os dias da semana (td com rowspan) */
+.diet-table tbody td[rowspan] {
+  font-weight: 700;
+  color: var(--color-primary);
+  background-color: #dcedc8; /* cor clara para destacar */
+  border-right: 2px solid var(--color-primary);
+  width: 120px;
+  white-space: nowrap; /* evita quebra de linha */
+  padding-left: 1.2rem;
+  vertical-align: middle; /* centraliza verticalmente */
+}
+
+/* Opcional: hover para as linhas */
+.diet-table tbody tr:hover {
+  background-color: var(--color-hover);
+  color: var(--color-text-main);
+  cursor: default;
+  border: 5px solid black;
+}
+
+
+
+
+/* ==================== Buttons ==================== */
+.btn-submit{
+  float: left;
+  margin-top: 10px;
+  border: none;
+  font-style: italic;
+  background-color: var(--color-primary);
+  padding: 0.5rem;
+  color: #fff;
+  border-radius: 7px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+.btn-submit:hover{
+  background-color: #96bd9d;
+}
+.btn-submit:disabled{
+  cursor: auto;
+  color: var(--color-text-muted);
+}
+
+/* --- Media Queries --- */
+
+/* Telas menores que 768px (tablets e celulares) */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 0 1rem; /* Reduz o padding da navbar */
+  }
+
+  .navbar-title {
+    font-size: 1rem; /* Diminui o tamanho da fonte do título */
+  }
+
+  .container-center {
+    padding: 0 0.5rem; /* Reduz o padding do container */
+    min-height: 80vh; /* Ajusta a altura mínima para telas menores */
+  }
+
+  .card {
+    width: 90%; /* Ocupa 90% da largura da tela */
+    padding: 1.5rem; /* Reduz o padding do card */
+  }
+
+  .card-diet {
+    padding: 1.5rem; /* Reduz o padding do card de dieta */
+  }
+
+  /* Ajustes para a tabela em telas menores */
+  .diet-table {
+    font-size: 0.85rem; /* Diminui o tamanho da fonte da tabela */
+    border-radius: 8px; /* Ajusta o border-radius */
+  }
+
+  .diet-table thead th,
+  .diet-table tbody td {
+    padding: 0.6rem 0.8rem; /* Reduz o padding das células da tabela */
+  }
+
+  .diet-table tbody td[rowspan] {
+    width: 90px; /* Reduz a largura da coluna do dia da semana */
+    padding-left: 0.8rem;
+    font-size: 0.9rem;
+  }
+}
+
+/* Telas menores que 480px (smartphones) */
+@media (max-width: 480px) {
+  .navbar {
+    height: 40px; /* Reduz a altura da navbar */
+    padding: 0 0.8rem;
+  }
+
+  .navbar-title {
+    font-size: 0.9rem;
+  }
+
+  .container-center {
+    padding: 0 0.3rem;
+    min-height: 90vh; /* Mais altura para acomodar conteúdo */
+  }
+
+  .card {
+    width: 95%; /* Ocupa ainda mais largura */
+    padding: 1rem;
+  }
+
+  .card-diet {
+    padding: 1rem;
+  }
+
+  .card-body h2 {
+    font-size: 1rem; /* Diminui o tamanho do título do card-body */
+  }
+
+  select,
+  input.custom-input {
+    padding: 0.3rem; /* Reduz o padding dos inputs/selects */
+    font-size: 0.9rem;
+  }
+
+  .diet-table {
+    font-size: 0.75rem; /* Fonte menor para a tabela */
+  }
+
+  .diet-table thead th,
+  .diet-table tbody td {
+    padding: 0.4rem 0.6rem;
+  }
+
+  .diet-table tbody td[rowspan] {
+    width: 70px; /* Reduz ainda mais a largura da coluna do dia */
+    padding-left: 0.5rem;
+    font-size: 0.8rem;
+  }
+
+  .btn-submit {
+    padding: 0.4rem; /* Reduz o padding do botão */
+    font-size: 0.9rem;
+  }
+}
+
+.spinner {
+  border: 2px solid transparent;
+  border-top: 2px solid white;
+  border-radius: 50%;
+  width: 16px;
+  height: 16px;
+  animation: spin 1s linear infinite;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}

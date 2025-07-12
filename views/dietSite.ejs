@@ -1,0 +1,18 @@
+<%- include('./partials/header.ejs') %>
+<%- include('./partials/navbar.ejs') %>
+
+<div class="container-center">
+    <div class="card-diet">
+        <div class="card-title">
+            <h1>Emagrece <span class="AI">AÍ</span></h1>
+            <p><%= objetivo %> | Peso Atual: <%= peso %>kg</p>
+        </div>
+        <p><hr></p>
+        <div class="card-body-diet">
+            <div id="diet-table-wrapper">
+                <%- dietaHtml %>
+            </div>
+        </div>
+    </div>
+</div>
+<%- include('./partials/footer.ejs') %>
